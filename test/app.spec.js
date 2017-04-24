@@ -28,6 +28,15 @@ const naList = [
   { name: 'Kathy', age: 8, gender: 'f', jobType: 'N/A' }
 ];
 
+const drinkList = [
+  { name: 'Bob', age: 21, gender: 'm', jobType: 'dv' },
+  { name: 'Claire', age: 56, gender: 'f', jobType: 'dv' },
+  { name: 'Eric', age: 61, gender: 'm', jobType: 'dv' },
+  { name: 'Fred', age: 45, gender: 'm', jobType: 'dv' },
+  { name: 'George', age: 38, gender: 'm', jobType: 'dv' },
+  { name: 'Jake', age: 27, gender: 'm', jobType: 'dv' }
+];
+
 
 
 describe('byId', () => {
@@ -65,5 +74,11 @@ describe('employees', () => {
   it('should return a list of all employees that work for given employer', () => {
     expect(dbFuncs.employees('na')).to.deep.equal(naList);
     expect(dbFuncs.employees('none')).to.deep.equal([]);
+  });
+});
+
+describe('can drink', () => {
+  it('should return a list of all people who can drink', () => {
+    expect(dbFuncs.canDrink()).to.deep.equal(drinkList);
   });
 });
